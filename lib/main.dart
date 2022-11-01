@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:softarchpro/userprofilepage.dart';
+import 'package:softarchpro/editprofilepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: UserProfilePage()
+      home: EditProfilepage()
     );
   }
 }

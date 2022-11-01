@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class UserProfilePage extends StatefulWidget {
   @override
@@ -52,8 +53,10 @@ class _UserProfilePageState extends State<UserProfilePage> {
                 ),
               ),
               IconButton(
-                  iconSize: 15,
-                  icon: Icon(Icons.edit, color: Colors.white),
+                  
+                  icon: FaIcon(FontAwesomeIcons.pen),
+                  iconSize: 20,
+                  color: Colors.white,
                   onPressed: () => print("HELLO")),
             ],
           ),
