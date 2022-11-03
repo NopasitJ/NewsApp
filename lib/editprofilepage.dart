@@ -14,9 +14,12 @@ class _EditProfilePageState extends State<EditProfilepage> {
         elevation: 0.0,
         leading: IconButton(
           icon: FaIcon(FontAwesomeIcons.arrowLeft),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
       ),
+      endDrawer: const NavigationDrawer(),
       body: Container(
         padding: EdgeInsets.only(left: 16, top: 25, right: 16),
         child: GestureDetector(
@@ -100,14 +103,14 @@ class _EditProfilePageState extends State<EditProfilepage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     style: OutlinedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 40),
-                      side: BorderSide(width: 5.0, color: Colors.white),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)
-                      )
-                    ),
+                        padding: EdgeInsets.symmetric(horizontal: 40),
+                        side: BorderSide(width: 5.0, color: Colors.white),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20))),
                     child: Text(
                       "CANCEL",
                       style: TextStyle(
@@ -119,12 +122,10 @@ class _EditProfilePageState extends State<EditProfilepage> {
                   OutlinedButton(
                     onPressed: () {},
                     style: OutlinedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 80),
-                      side: BorderSide(width: 5.0, color: Colors.orange),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)
-                      )
-                    ),
+                        padding: EdgeInsets.symmetric(horizontal: 80),
+                        side: BorderSide(width: 5.0, color: Colors.orange),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20))),
                     child: Text(
                       "SAVE",
                       style: TextStyle(
@@ -141,4 +142,10 @@ class _EditProfilePageState extends State<EditProfilepage> {
       ),
     );
   }
+}
+
+class NavigationDrawer extends StatelessWidget {
+  const NavigationDrawer({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) => Drawer();
 }
