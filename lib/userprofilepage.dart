@@ -17,14 +17,24 @@ class _UserProfilePageState extends State<UserProfilePage> {
       appBar: AppBar(
           backgroundColor: Colors.orange,
           elevation: 0.0,
-          title: Text(
-            "KMITL News",
+          title: Column(
+            crossAxisAlignment:CrossAxisAlignment.start,
+            children:[
+              Text(
+            "KMITL",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
               fontSize: 20,
             ),
           ),
+          Row(children: [
+            Text("News",
+            style: TextStyle(fontSize: 12,color: Colors.white),)
+          ],),
+          
+            
+          ]),
           actions: [
             Padding(
                 padding: EdgeInsets.only(right: 20.0),
@@ -33,8 +43,8 @@ class _UserProfilePageState extends State<UserProfilePage> {
                     print("No Noti");
                   },
                   icon: FaIcon(FontAwesomeIcons.bell),
-                )),
-          ]),
+                )),],
+          ),
       drawer: const NavigationDrawer(),
       body: Center(
           child: Column(

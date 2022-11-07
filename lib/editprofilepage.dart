@@ -14,15 +14,25 @@ class _EditProfilePageState extends State<EditProfilepage> {
       appBar: AppBar(
         backgroundColor: Colors.orange,
         elevation: 0.0,
-        title: Text(
-          "KMITL News",
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
+        title: Column(
+            crossAxisAlignment:CrossAxisAlignment.start,
+            children:[
+              Text(
+            "KMITL",
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
           ),
-        ),
-        
+          Row(children: [
+            Text("News",
+            style: TextStyle(fontSize: 12,color: Colors.white),)
+          ],),
+          
+            
+          ]),
+          
       ),
       drawer: const NavigationDrawer(),
       body: Container(
