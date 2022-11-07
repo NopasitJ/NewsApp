@@ -6,20 +6,25 @@ class EditProfilepage extends StatefulWidget {
 }
 
 class _EditProfilePageState extends State<EditProfilepage> {
+  String avatarURL2 =
+      "https://scontent.fbkk2-8.fna.fbcdn.net/v/t31.18172-8/27983318_927126334112348_3039290882612106297_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEJSKqBJw-NYpHLhniXxUaJWAX3VIQhaipYBfdUhCFqKiUnNtN-usrb1_VhxPCFS6WqQxm9QebFqsnh2xxOIP2J&_nc_ohc=FO6mJJc0WnwAX_CHgnT&_nc_ht=scontent.fbkk2-8.fna&oh=00_AfC7wOHDCa9NsrMLto1cGqlR31vhDHSV74XTWTd1S1uxbA&oe=639028DF";
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.orange,
         elevation: 0.0,
-        leading: IconButton(
-          icon: FaIcon(FontAwesomeIcons.arrowLeft),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+        title: Text(
+          "KMITL News",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
         ),
+        
       ),
-      endDrawer: const NavigationDrawer(),
+      drawer: const NavigationDrawer(),
       body: Container(
         padding: EdgeInsets.only(left: 16, top: 25, right: 16),
         child: GestureDetector(
@@ -48,8 +53,8 @@ class _EditProfilePageState extends State<EditProfilepage> {
                         shape: BoxShape.circle,
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: NetworkImage(
-                              "https://scontent.fbkk22-3.fna.fbcdn.net/v/t31.18172-1/27983318_927126334112348_3039290882612106297_o.jpg?stp=dst-jpg_p200x200&_nc_cat=103&ccb=1-7&_nc_sid=7206a8&_nc_eui2=AeEJSKqBJw-NYpHLhniXxUaJWAX3VIQhaipYBfdUhCFqKiUnNtN-usrb1_VhxPCFS6WqQxm9QebFqsnh2xxOIP2J&_nc_ohc=U5gkpeoCGy0AX9ZHyBK&_nc_ht=scontent.fbkk22-3.fna&oh=00_AfD1wCQPrTCEHKxpdiwyPLscRk8iqxT6ZoBgke85OMSljQ&oe=63886EFA"),
+                          image: NetworkImage(avatarURL2),
+                          
                         ),
                       ),
                     ),

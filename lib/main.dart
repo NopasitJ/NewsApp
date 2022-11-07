@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:softarchpro/othersprofilepage.dart';
 import 'package:softarchpro/userprofilepage.dart';
 import 'package:softarchpro/editprofilepage.dart';
+import 'package:softarchpro/othersprofilepage.dart';
 
 void main() {
   runApp(const MyApp());

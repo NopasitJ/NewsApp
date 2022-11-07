@@ -9,24 +9,33 @@ class UserProfilePage extends StatefulWidget {
 }
 
 class _UserProfilePageState extends State<UserProfilePage> {
-  String avatarURL =
+  String avatarURL1 =
       "https://i.pinimg.com/originals/d1/1e/20/d11e20d44501e1a59439b5344e07f5d7.jpg";
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Colors.orange,
-        elevation: 0.0,
-        title: Text(
-          "KMITL News",
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
+          backgroundColor: Colors.orange,
+          elevation: 0.0,
+          title: Text(
+            "KMITL News",
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
           ),
-        ),
-      ),
-      endDrawer: const NavigationDrawer(),
+          actions: [
+            Padding(
+                padding: EdgeInsets.only(right: 20.0),
+                child: IconButton(
+                  onPressed: () {
+                    print("No Noti");
+                  },
+                  icon: FaIcon(FontAwesomeIcons.bell),
+                )),
+          ]),
+      drawer: const NavigationDrawer(),
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -37,7 +46,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
           ),
           CircleAvatar(
             radius: 56,
-            backgroundImage: NetworkImage(avatarURL),
+            backgroundImage: NetworkImage(avatarURL1),
           ),
           SizedBox(
             height: 12.0,
