@@ -1,23 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:softarchpro/widgets/navigation_drawer.dart';
+import 'package:softarchpro/widgets/circle_button.dart';
+import 'package:softarchpro/widgets/post_contrainer.dart';
 
 class OthersProfilePage extends StatefulWidget {
   _OthersProfilePage createState() => _OthersProfilePage();
 }
 
 class _OthersProfilePage extends State<OthersProfilePage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  void _openEndDrawer() {
+    _scaffoldKey.currentState!.openEndDrawer();
+  }
+
+  void _closeEndDrawer() {
+    Navigator.of(context).pop();
+  }
+
   String avatarURL =
       "https://scontent.fbkk2-8.fna.fbcdn.net/v/t1.6435-9/30441178_1708109815943486_3812504059043119104_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=ad2b24&_nc_eui2=AeG9iADga4oU8aZfSgydY1XDPiiv0fRh-_U-KK_R9GH79Rmx7Jvfx9bO5nqCGD4hliM5a5RQAyn4G3VNKP7p7CxS&_nc_ohc=-R7hR6YD7jwAX8q3Nxu&tn=zczj23AEyJI8ak6P&_nc_ht=scontent.fbkk2-8.fna&oh=00_AfBDtp0AuHSIu7CLujo980LOIdJoMhuLZL4FAQOa5rc6cw&oe=639035C4";
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      endDrawer: NavigateDrawer(),
       backgroundColor: Colors.black,
       appBar: AppBar(
-          backgroundColor: Colors.orange,
-          elevation: 0.0,
-          title: Column(
-            crossAxisAlignment:CrossAxisAlignment.start,
-            children:[
-              Text(
+        backgroundColor: Colors.orange,
+        elevation: 0.0,
+        title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Text(
             "KMITL",
             style: TextStyle(
               color: Colors.white,
@@ -25,23 +38,28 @@ class _OthersProfilePage extends State<OthersProfilePage> {
               fontSize: 20,
             ),
           ),
-          Row(children: [
-            Text("News",
-            style: TextStyle(fontSize: 12,color: Colors.white),)
-          ],),
-          
-            
-          ]),
-          actions: [
-            Padding(
-                padding: EdgeInsets.only(right: 20.0),
-                child: IconButton(
-                  onPressed: () {
-                    print("No Noti");
-                  },
-                  icon: FaIcon(FontAwesomeIcons.bell),
-                )),],),
-      drawer: const NavigationDrawer(),
+          Row(
+            children: [
+              Text(
+                "News",
+                style: TextStyle(fontSize: 12, color: Colors.white),
+              )
+            ],
+          ),
+        ]),
+        actions: <Widget>[
+          CircleButton(
+              icon: FaIcon(FontAwesomeIcons.bell),
+              iconSize: 23.0,
+              onPressed: () => print('bell')),
+          CircleButton(
+            icon: FaIcon(FontAwesomeIcons.gripVertical),
+            iconSize: 23.0,
+            onPressed: _openEndDrawer,
+          ),
+        ],
+      ),
+      
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -125,7 +143,9 @@ class _OthersProfilePage extends State<OthersProfilePage> {
               ),
             ),
             Expanded(
-              child: Container(),
+              child: Container(
+                child: PostContainer(),
+              ),
             ),
           ],
         ),
@@ -134,8 +154,4 @@ class _OthersProfilePage extends State<OthersProfilePage> {
   }
 }
 
-class NavigationDrawer extends StatelessWidget {
-  const NavigationDrawer({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) => Drawer();
-}
+

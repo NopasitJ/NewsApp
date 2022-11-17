@@ -34,7 +34,7 @@ class _EditProfilePageState extends State<EditProfilepage> {
           ]),
           
       ),
-      drawer: const NavigationDrawer(),
+      
       body: Container(
         padding: EdgeInsets.only(left: 16, top: 25, right: 16),
         child: GestureDetector(
@@ -159,8 +159,3 @@ class _EditProfilePageState extends State<EditProfilepage> {
   }
 }
 
-class NavigationDrawer extends StatelessWidget {
-  const NavigationDrawer({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) => Drawer();
-}
