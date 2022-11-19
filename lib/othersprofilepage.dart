@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:softarchpro/widgets/navigation_drawer.dart';
 import 'package:softarchpro/widgets/circle_button.dart';
 import 'package:softarchpro/widgets/post_contrainer.dart';
+import 'package:softarchpro/widgets/bottom_banner_ad.dart';
 
 class OthersProfilePage extends StatefulWidget {
   _OthersProfilePage createState() => _OthersProfilePage();
@@ -27,6 +28,7 @@ class _OthersProfilePage extends State<OthersProfilePage> {
       key: _scaffoldKey,
       endDrawer: NavigateDrawer(),
       backgroundColor: Colors.black,
+      bottomNavigationBar: BottomBannerAd(),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 222, 105, 21),
         elevation: 0.0,
@@ -55,7 +57,7 @@ class _OthersProfilePage extends State<OthersProfilePage> {
           CircleButton(
               icon: FaIcon(FontAwesomeIcons.bell),
               iconSize: 23.0,
-              onPressed: () => print('bell')),
+              onPressed: showBanner),
           CircleButton(
             icon: FaIcon(FontAwesomeIcons.gripVertical),
             iconSize: 23.0,
@@ -136,6 +138,7 @@ class _OthersProfilePage extends State<OthersProfilePage> {
                   color: Colors.orange,
                   onPressed: () {
                     print("Report ur mom");
+                    
                   },
                 ),
               ],
@@ -156,11 +159,28 @@ class _OthersProfilePage extends State<OthersProfilePage> {
                 child: PostContainer(),
               ),
             ),
+            
           ],
         ),
+        
       ),
     );
   }
+  void showBanner() => ScaffoldMessenger.of(context).showMaterialBanner(
+    MaterialBanner(backgroundColor: Colors.indigo,
+    content: Text("Hello"),
+    contentTextStyle: TextStyle(color: Colors.white,fontSize: 20),
+    actions: [
+      TextButton(style: TextButton.styleFrom(primary: Colors.white),
+      child: Text('dismiss'),
+      onPressed: () {
+        
+      },
+      )
+
+    ],
+    ),
+  );
 }
 
 
