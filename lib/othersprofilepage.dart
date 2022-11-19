@@ -19,6 +19,7 @@ class _OthersProfilePage extends State<OthersProfilePage> {
     Navigator.of(context).pop();
   }
 
+  bool follow =false;
   String avatarURL =
       "https://scontent.fbkk2-8.fna.fbcdn.net/v/t1.6435-9/30441178_1708109815943486_3812504059043119104_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=ad2b24&_nc_eui2=AeG9iADga4oU8aZfSgydY1XDPiiv0fRh-_U-KK_R9GH79Rmx7Jvfx9bO5nqCGD4hliM5a5RQAyn4G3VNKP7p7CxS&_nc_ohc=-R7hR6YD7jwAX8q3Nxu&tn=zczj23AEyJI8ak6P&_nc_ht=scontent.fbkk2-8.fna&oh=00_AfBDtp0AuHSIu7CLujo980LOIdJoMhuLZL4FAQOa5rc6cw&oe=639035C4";
   Widget build(BuildContext context) {
@@ -101,6 +102,10 @@ class _OthersProfilePage extends State<OthersProfilePage> {
               children: [
                 GestureDetector(
                   onTap: () {
+                    if (follow)
+                                setState(() => follow = false);
+                              else
+                                setState(() => follow = true);
                     print("Follow");
                   },
                   child: AnimatedContainer(
@@ -109,12 +114,13 @@ class _OthersProfilePage extends State<OthersProfilePage> {
                     height: 35,
                     width: 200,
                     decoration: BoxDecoration(
-                        color: Colors.transparent,
+                        color: follow?Colors.orange : Colors.transparent,
                         borderRadius: BorderRadius.circular(5),
-                        border: Border.all(color: Colors.grey.shade100)),
+                        border: Border.all(color: follow ?  Colors.transparent : Colors.grey.shade100 )),
                     child: Center(
                       child: Text(
-                        "Follow",
+
+                        follow ? "Following" : "Follow",
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
