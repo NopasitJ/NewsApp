@@ -29,6 +29,7 @@ class _OthersProfilePage extends State<OthersProfilePage> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 222, 105, 21),
         elevation: 0.0,
+        automaticallyImplyLeading: false,
         title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(
               'KMITL',
