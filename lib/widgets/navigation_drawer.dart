@@ -127,8 +127,9 @@ class NavigateDrawer extends StatelessWidget {
             style: TextStyle(color: Colors.white, fontSize: 24),
           ),
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => UserProfilePage()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return UserProfilePage();
+            }));
           },
         ),
         ListTile(

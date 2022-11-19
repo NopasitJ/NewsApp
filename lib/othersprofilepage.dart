@@ -27,25 +27,27 @@ class _OthersProfilePage extends State<OthersProfilePage> {
       endDrawer: NavigateDrawer(),
       backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Colors.orange,
+        backgroundColor: Color.fromARGB(255, 222, 105, 21),
         elevation: 0.0,
         title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(
-            "KMITL",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
+              'KMITL',
+              style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
             ),
-          ),
           Row(
-            children: [
-              Text(
-                "News",
-                style: TextStyle(fontSize: 12, color: Colors.white),
-              )
-            ],
-          ),
+              children: <Widget>[
+                Text(
+                  'NEWS',
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
         ]),
         actions: <Widget>[
           CircleButton(
