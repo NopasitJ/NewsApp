@@ -8,8 +8,9 @@ import 'package:softarchpro/widgets/widgets.dart';
 import 'package:softarchpro/widgets/post_contrainer.dart';
 
 class UserProfilePage extends StatefulWidget {
+  const UserProfilePage({Key? key}) : super(key: key);
   @override
-  _UserProfilePageState createState() => _UserProfilePageState();
+  State<UserProfilePage> createState() => _UserProfilePageState();
 }
 
 class _UserProfilePageState extends State<UserProfilePage> {
@@ -31,27 +32,26 @@ class _UserProfilePageState extends State<UserProfilePage> {
       endDrawer: NavigateDrawer(),
       backgroundColor: Colors.black,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 222, 105, 21),
         elevation: 0.0,
         title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(
-              'KMITL',
-              style: TextStyle(
-                  fontSize: 24,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
-            ),
+            'KMITL',
+            style: TextStyle(
+                fontSize: 24, color: Colors.white, fontWeight: FontWeight.bold),
+          ),
           Row(
-              children: <Widget>[
-                Text(
-                  'NEWS',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.white,
-                  ),
+            children: <Widget>[
+              Text(
+                'NEWS',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: Colors.white,
                 ),
-              ],
-            ),
+              ),
+            ],
+          ),
         ]),
         actions: <Widget>[
           CircleButton(
@@ -97,10 +97,10 @@ class _UserProfilePageState extends State<UserProfilePage> {
                     iconSize: 20,
                     color: Colors.white,
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) {return EditProfilepage();}));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return EditProfilepage();
+                      }));
                     }),
               ],
             ),
@@ -115,8 +115,6 @@ class _UserProfilePageState extends State<UserProfilePage> {
                 thickness: 0.5,
               ),
             ),
-            
-            
             Expanded(
               child: Container(
                 child: PostContainer(),

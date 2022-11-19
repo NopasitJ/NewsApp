@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class EditProfilepage extends StatefulWidget {
+
+  const EditProfilepage({Key? key}) : super(key: key);
   //final String currentUserId;
   //EditProfilepage({this.currentUserId});
-  _EditProfilePageState createState() => _EditProfilePageState();
+  State<EditProfilepage> createState() => _EditProfilePageState();
 }
 
 class _EditProfilePageState extends State<EditProfilepage> {
@@ -19,6 +21,7 @@ class _EditProfilePageState extends State<EditProfilepage> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 222, 105, 21),
         elevation: 0.0,
+        automaticallyImplyLeading: false,
         title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(
             "KMITL",
