@@ -54,10 +54,10 @@ class _OthersProfilePage extends State<OthersProfilePage> {
             ),
         ]),
         actions: <Widget>[
-          CircleButton(
+          /*CircleButton(
               icon: FaIcon(FontAwesomeIcons.bell),
               iconSize: 23.0,
-              onPressed: showBanner),
+              onPressed: showBanner),*/
           CircleButton(
             icon: FaIcon(FontAwesomeIcons.gripVertical),
             iconSize: 23.0,
@@ -166,21 +166,6 @@ class _OthersProfilePage extends State<OthersProfilePage> {
       ),
     );
   }
-  void showBanner() => ScaffoldMessenger.of(context).showMaterialBanner(
-    MaterialBanner(backgroundColor: Colors.indigo,
-    content: Text("Hello"),
-    contentTextStyle: TextStyle(color: Colors.white,fontSize: 20),
-    actions: [
-      TextButton(style: TextButton.styleFrom(primary: Colors.white),
-      child: Text('dismiss'),
-      onPressed: () {
-        
-      },
-      )
-
-    ],
-    ),
-  );
 }
 
 

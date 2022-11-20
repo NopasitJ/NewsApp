@@ -6,6 +6,7 @@ import 'package:softarchpro/widgets/navigation_drawer.dart';
 import 'package:softarchpro/widgets/circle_button.dart';
 import 'package:softarchpro/widgets/widgets.dart';
 import 'package:softarchpro/widgets/post_contrainer.dart';
+import 'package:softarchpro/widgets/bottom_banner_ad.dart';
 
 class UserProfilePage extends StatefulWidget {
   const UserProfilePage({Key? key}) : super(key: key);
@@ -30,6 +31,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
     return Scaffold(
       key: _scaffoldKey,
       endDrawer: NavigateDrawer(),
+      bottomNavigationBar: BottomBannerAd(),
       backgroundColor: Colors.black,
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -54,10 +56,10 @@ class _UserProfilePageState extends State<UserProfilePage> {
           ),
         ]),
         actions: <Widget>[
-          CircleButton(
+          /*CircleButton(
               icon: FaIcon(FontAwesomeIcons.bell),
               iconSize: 23.0,
-              onPressed: () => print('bell')),
+              onPressed: () => print('bell')),*/
           CircleButton(
             icon: FaIcon(FontAwesomeIcons.gripVertical),
             iconSize: 23.0,
